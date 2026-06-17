@@ -9,15 +9,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet"/>
 <style>
 :root{
-  --orange:#C26A0E;
-  --orange-deep:#8F4D08;
-  --orange-bright:#E08A2B;
-  --orange-glow:#F2A94B;
+  --orange:#FA6B02;
+  --orange-deep:#B24D04;
+  --orange-bright:#FF8A33;
+  --orange-glow:#FFB877;
   --ink:#2E2A24;
-  --grey:#6E665B;
-  --panel:#FBEFE0;
-  --panel-line:#F0DAC0;
-  --wash:#F6EEE3;
+  --grey:#60666D;
+  --panel:#FEEEE0;
+  --panel-line:#FBD7BB;
+  --wash:#FBF3EC;
   --blue:#0061AD;
   --green:#3DA35D;
   --card-radius:18px;
@@ -46,8 +46,8 @@ body{
   display:flex;align-items:center;gap:18px;flex-wrap:wrap;
 }
 .topnav .brand{
-  margin-right:auto;width:106px;height:24px;border-radius:4px;
-  background:var(--logo) left center/contain no-repeat;
+  margin-right:auto;width:130px;height:32px;border-radius:5px;
+  background:#fff;background-image:var(--logo);background-repeat:no-repeat;background-position:center;background-size:80%;
 }
 .topnav a{
   color:#fff;text-decoration:none;font-size:13.5px;font-weight:600;
@@ -59,7 +59,7 @@ body{
 /* ---------- Hero ---------- */
 .hero{position:relative;max-width:880px;margin:28px auto 26px;height:300px;border-radius:10px;overflow:hidden;box-shadow:0 12px 44px rgba(143,77,8,.18)}
 .hero svg.bg{position:absolute;inset:0;width:100%;height:100%}
-.hero .wordmark{position:absolute;top:22px;left:32px;z-index:3;width:198px;height:45px;border-radius:5px;background:var(--logo) left center/contain no-repeat;box-shadow:0 3px 12px rgba(120,60,0,.18)}
+.hero .wordmark{position:absolute;top:22px;left:30px;z-index:3;width:228px;height:60px;border-radius:8px;background:#fff;background-image:var(--logo);background-repeat:no-repeat;background-position:center;background-size:80%;box-shadow:0 4px 14px rgba(120,60,0,.20)}
 .hero .eyebrow{position:absolute;top:118px;left:34px;color:#fff;font-family:'Montserrat',sans-serif;font-weight:700;letter-spacing:2.4px;font-size:12px;z-index:3;opacity:.95}
 .hero .htitle{position:absolute;top:138px;left:32px;color:#fff;font-family:'Montserrat',sans-serif;font-weight:800;font-size:44px;line-height:1.05;z-index:3;text-shadow:0 2px 10px rgba(120,60,0,.25)}
 .hero .tagline{position:absolute;bottom:22px;right:30px;color:#fff;font-family:'Montserrat',sans-serif;font-style:italic;font-weight:700;font-size:18px;z-index:3}
@@ -79,7 +79,7 @@ body{
 .wm{position:absolute;left:-8px;bottom:14px;font-family:'Montserrat',sans-serif;font-style:italic;font-weight:800;font-size:120px;letter-spacing:-2px;color:rgba(0,97,173,.05);user-select:none;pointer-events:none;line-height:1;z-index:0}
 
 /* ---------- Headings ---------- */
-h1.section{font-family:'Montserrat',sans-serif;font-weight:800;text-transform:uppercase;color:var(--orange-deep);font-size:25px;letter-spacing:.4px;line-height:1.14;margin:6px 0 16px}
+h1.section{font-family:'Montserrat',sans-serif;font-weight:700;color:var(--orange-deep);font-size:26px;letter-spacing:0;line-height:1.16;margin:6px 0 16px}
 h2.sub{font-family:'Montserrat',sans-serif;font-weight:700;color:var(--orange-deep);font-size:18px;margin:24px 0 10px}
 h3.minor{font-family:'Montserrat',sans-serif;font-weight:600;color:var(--orange);font-size:15px;margin:16px 0 8px}
 p{margin:0 0 13px;font-size:15px}
@@ -119,10 +119,11 @@ ol.steps li::before{content:counter(s);position:absolute;left:14px;top:50%;trans
 
 /* ---------- Fillable fields ---------- */
 .frow{display:grid;grid-template-columns:1fr;gap:14px;margin:6px 0 6px}
-.fgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:6px 0 10px}
+.fgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:6px 0 10px;align-items:start}
 @media(max-width:640px){.fgrid{grid-template-columns:1fr}}
 .fld{display:flex;flex-direction:column;gap:5px}
 .fld label{font-family:'Montserrat',sans-serif;font-weight:600;font-size:12.5px;letter-spacing:.3px;color:var(--orange-deep);text-transform:uppercase}
+.fgrid .fld label{min-height:33px;display:flex;align-items:flex-end;line-height:1.2}
 .fld input,.entry{
   border:1px solid var(--panel-line);border-radius:10px;background:#fff;
   font-family:Arial,Helvetica,sans-serif;font-size:14.5px;color:var(--ink);padding:9px 12px;line-height:1.5;
@@ -194,18 +195,17 @@ table.log td .cell:focus{outline:2px solid var(--orange-bright);outline-offset:-
     <a href="#first">First session</a>
     <a href="#records">Session records</a>
     <a href="#review">Reviewing</a>
-    <a href="#support">Support</a>
   </div>
 </nav>
 
 <!-- ============ HERO ============ -->
 <header class="hero">
   <svg class="bg" viewBox="0 0 880 300" preserveAspectRatio="none" aria-hidden="true">
-    <rect width="880" height="300" fill="#C26A0E"/>
-    <polygon points="0,0 470,0 300,300 0,300" fill="#8F4D08"/>
-    <polygon points="470,0 880,0 880,150 320,300 250,300" fill="#E08A2B" opacity="0.55"/>
-    <polygon points="880,150 880,300 320,300 470,0 880,0" fill="#F2A94B" opacity="0.30"/>
-    <polygon points="0,250 880,200 880,300 0,300" fill="#8F4D08" opacity="0.30"/>
+    <rect width="880" height="300" fill="#FA6B02"/>
+    <polygon points="0,0 470,0 300,300 0,300" fill="#B24D04"/>
+    <polygon points="470,0 880,0 880,150 320,300 250,300" fill="#FF8A33" opacity="0.55"/>
+    <polygon points="880,150 880,300 320,300 470,0 880,0" fill="#FFB877" opacity="0.30"/>
+    <polygon points="0,250 880,200 880,300 0,300" fill="#B24D04" opacity="0.30"/>
   </svg>
   <div class="wordmark" role="img" aria-label="Story Contracting"></div>
   <div class="eyebrow">LEARNING &amp; DEVELOPMENT</div>
@@ -217,7 +217,7 @@ table.log td .cell:focus{outline:2px solid var(--orange-bright);outline-offset:-
 
 <!-- ============ WELCOME ============ -->
 <section class="page" id="welcome">
-  <div class="banner"><svg viewBox="0 0 880 84" preserveAspectRatio="none" aria-hidden="true"><polygon points="0,0 380,0 270,84 0,84" fill="#C26A0E"/><polygon points="380,0 880,0 880,50 270,84" fill="#E08A2B" opacity="0.45"/><polygon points="880,50 880,84 270,84 380,0 880,0" fill="#F2A94B" opacity="0.25"/></svg></div>
+  <div class="banner"><svg viewBox="0 0 880 84" preserveAspectRatio="none" aria-hidden="true"><polygon points="0,0 380,0 270,84 0,84" fill="#FA6B02"/><polygon points="380,0 880,0 880,50 270,84" fill="#FF8A33" opacity="0.45"/><polygon points="880,50 880,84 270,84 380,0 880,0" fill="#FFB877" opacity="0.25"/></svg></div>
   <div class="page-body">
     <h1 class="section">Welcome</h1>
     <p class="lead">This toolkit is yours.</p>
@@ -230,7 +230,7 @@ table.log td .cell:focus{outline:2px solid var(--orange-bright);outline-offset:-
 
 <!-- ============ YOUR ROLE ============ -->
 <section class="page" id="role">
-  <div class="banner"><svg viewBox="0 0 880 84" preserveAspectRatio="none" aria-hidden="true"><polygon points="0,0 380,0 270,84 0,84" fill="#C26A0E"/><polygon points="380,0 880,0 880,50 270,84" fill="#E08A2B" opacity="0.45"/><polygon points="880,50 880,84 270,84 380,0 880,0" fill="#F2A94B" opacity="0.25"/></svg></div>
+  <div class="banner"><svg viewBox="0 0 880 84" preserveAspectRatio="none" aria-hidden="true"><polygon points="0,0 380,0 270,84 0,84" fill="#FA6B02"/><polygon points="380,0 880,0 880,50 270,84" fill="#FF8A33" opacity="0.45"/><polygon points="880,50 880,84 270,84 380,0 880,0" fill="#FFB877" opacity="0.25"/></svg></div>
   <div class="page-body">
     <h1 class="section">Mentoring, and your part in it</h1>
     <h2 class="sub" style="margin-top:6px">What mentoring is at Story</h2>
@@ -255,7 +255,7 @@ table.log td .cell:focus{outline:2px solid var(--orange-bright);outline-offset:-
 
 <!-- ============ GOALS ============ -->
 <section class="page" id="goals">
-  <div class="banner"><svg viewBox="0 0 880 84" preserveAspectRatio="none" aria-hidden="true"><polygon points="0,0 380,0 270,84 0,84" fill="#C26A0E"/><polygon points="380,0 880,0 880,50 270,84" fill="#E08A2B" opacity="0.45"/><polygon points="880,50 880,84 270,84 380,0 880,0" fill="#F2A94B" opacity="0.25"/></svg></div>
+  <div class="banner"><svg viewBox="0 0 880 84" preserveAspectRatio="none" aria-hidden="true"><polygon points="0,0 380,0 270,84 0,84" fill="#FA6B02"/><polygon points="380,0 880,0 880,50 270,84" fill="#FF8A33" opacity="0.45"/><polygon points="880,50 880,84 270,84 380,0 880,0" fill="#FFB877" opacity="0.25"/></svg></div>
   <div class="page-body">
     <h1 class="section">My goals</h1>
     <p>Good goals give your sessions a purpose. Story uses the SMART approach, so aim to make each goal Specific, Measurable, Achievable, Relevant and Time-bound. They can change as you go, and that is completely fine.</p>
@@ -290,7 +290,7 @@ table.log td .cell:focus{outline:2px solid var(--orange-bright);outline-offset:-
 
 <!-- ============ FIRST SESSION ============ -->
 <section class="page" id="first">
-  <div class="banner"><svg viewBox="0 0 880 84" preserveAspectRatio="none" aria-hidden="true"><polygon points="0,0 380,0 270,84 0,84" fill="#C26A0E"/><polygon points="380,0 880,0 880,50 270,84" fill="#E08A2B" opacity="0.45"/><polygon points="880,50 880,84 270,84 380,0 880,0" fill="#F2A94B" opacity="0.25"/></svg></div>
+  <div class="banner"><svg viewBox="0 0 880 84" preserveAspectRatio="none" aria-hidden="true"><polygon points="0,0 380,0 270,84 0,84" fill="#FA6B02"/><polygon points="380,0 880,0 880,50 270,84" fill="#FF8A33" opacity="0.45"/><polygon points="880,50 880,84 270,84 380,0 880,0" fill="#FFB877" opacity="0.25"/></svg></div>
   <div class="page-body">
     <h1 class="section">Getting our first session right</h1>
     <p>Your first proper session sets the tone for everything that follows. It is worth agreeing how you will work together before getting stuck into the work itself. Use this checklist to make sure you have covered the essentials.</p>
@@ -324,7 +324,7 @@ table.log td .cell:focus{outline:2px solid var(--orange-bright);outline-offset:-
 
 <!-- ============ SESSION RECORDS ============ -->
 <section class="page" id="records">
-  <div class="banner"><svg viewBox="0 0 880 84" preserveAspectRatio="none" aria-hidden="true"><polygon points="0,0 380,0 270,84 0,84" fill="#C26A0E"/><polygon points="380,0 880,0 880,50 270,84" fill="#E08A2B" opacity="0.45"/><polygon points="880,50 880,84 270,84 380,0 880,0" fill="#F2A94B" opacity="0.25"/></svg></div>
+  <div class="banner"><svg viewBox="0 0 880 84" preserveAspectRatio="none" aria-hidden="true"><polygon points="0,0 380,0 270,84 0,84" fill="#FA6B02"/><polygon points="380,0 880,0 880,50 270,84" fill="#FF8A33" opacity="0.45"/><polygon points="880,50 880,84 270,84 380,0 880,0" fill="#FFB877" opacity="0.25"/></svg></div>
   <div class="page-body">
     <h1 class="section">Session records</h1>
     <p>Use one of these for each session. There is space for your agenda going in, the key points coming out, the actions you agreed and a short reflection once you have had time to think. Fill it in on screen and print it, or print a blank one to write on. Add as many records as you need.</p>
@@ -355,35 +355,10 @@ table.log td .cell:focus{outline:2px solid var(--orange-bright);outline-offset:-
   <div class="wm">STORY</div>
 </section>
 
-<!-- ============ BETWEEN SESSIONS / DEV LOG ============ -->
-<section class="page" id="between">
-  <div class="banner"><svg viewBox="0 0 880 84" preserveAspectRatio="none" aria-hidden="true"><polygon points="0,0 380,0 270,84 0,84" fill="#C26A0E"/><polygon points="380,0 880,0 880,50 270,84" fill="#E08A2B" opacity="0.45"/><polygon points="880,50 880,84 270,84 380,0 880,0" fill="#F2A94B" opacity="0.25"/></svg></div>
-  <div class="page-body">
-    <h1 class="section">Between, and beyond, sessions</h1>
-    <p>Mentoring often sparks wider development: a course, a stretch task, shadowing someone, reading, or a piece of work you took on to learn from. Keep a note of it here so you have a record of everything you have done and what you took from it.</p>
-    <div class="record printable" id="devlog-card">
-      <div class="rhead"><span class="rtitle">Development activity log</span><span class="rlogo" role="img" aria-label="Story"></span></div>
-      <table class="log">
-        <thead><tr><th style="width:16%">Date</th><th style="width:34%">Activity</th><th style="width:14%">Time spent</th><th style="width:36%">Key learning, and how I will use it</th></tr></thead>
-        <tbody id="devlog-rows">
-          <tr><td><div class="cell" contenteditable="true" data-ph="Date"></div></td><td><div class="cell" contenteditable="true" data-ph="What I did"></div></td><td><div class="cell" contenteditable="true" data-ph="How long"></div></td><td><div class="cell" contenteditable="true" data-ph="What I learned"></div></td></tr>
-          <tr><td><div class="cell" contenteditable="true" data-ph="Date"></div></td><td><div class="cell" contenteditable="true" data-ph="What I did"></div></td><td><div class="cell" contenteditable="true" data-ph="How long"></div></td><td><div class="cell" contenteditable="true" data-ph="What I learned"></div></td></tr>
-          <tr><td><div class="cell" contenteditable="true" data-ph="Date"></div></td><td><div class="cell" contenteditable="true" data-ph="What I did"></div></td><td><div class="cell" contenteditable="true" data-ph="How long"></div></td><td><div class="cell" contenteditable="true" data-ph="What I learned"></div></td></tr>
-        </tbody>
-      </table>
-      <div class="btnrow no-print">
-        <button class="btn ghost" data-action="add-row">+ Add a row</button>
-        <button class="btn primary" data-action="print">Print my log</button>
-        <button class="btn ghost" data-action="clear">Clear</button>
-      </div>
-    </div>
-  </div>
-  <div class="wm">STORY</div>
-</section>
 
 <!-- ============ REVIEWING ============ -->
 <section class="page" id="review">
-  <div class="banner"><svg viewBox="0 0 880 84" preserveAspectRatio="none" aria-hidden="true"><polygon points="0,0 380,0 270,84 0,84" fill="#C26A0E"/><polygon points="380,0 880,0 880,50 270,84" fill="#E08A2B" opacity="0.45"/><polygon points="880,50 880,84 270,84 380,0 880,0" fill="#F2A94B" opacity="0.25"/></svg></div>
+  <div class="banner"><svg viewBox="0 0 880 84" preserveAspectRatio="none" aria-hidden="true"><polygon points="0,0 380,0 270,84 0,84" fill="#FA6B02"/><polygon points="380,0 880,0 880,50 270,84" fill="#FF8A33" opacity="0.45"/><polygon points="880,50 880,84 270,84 380,0 880,0" fill="#FFB877" opacity="0.25"/></svg></div>
   <div class="page-body">
     <h1 class="section">Reviewing, and ending well</h1>
     <div class="cols">
@@ -409,20 +384,6 @@ table.log td .cell:focus{outline:2px solid var(--orange-bright);outline-offset:-
         <button class="btn ghost" data-action="clear">Clear</button>
       </div>
     </div>
-  </div>
-  <div class="wm">STORY</div>
-</section>
-
-<!-- ============ SUPPORT ============ -->
-<section class="page" id="support">
-  <div class="banner"><svg viewBox="0 0 880 84" preserveAspectRatio="none" aria-hidden="true"><polygon points="0,0 380,0 270,84 0,84" fill="#C26A0E"/><polygon points="380,0 880,0 880,50 270,84" fill="#E08A2B" opacity="0.45"/><polygon points="880,50 880,84 270,84 380,0 880,0" fill="#F2A94B" opacity="0.25"/></svg></div>
-  <div class="page-body">
-    <h1 class="section">Who to turn to</h1>
-    <p>You are never on your own in this. If you have a question, a worry, or you just want to talk something through outside your sessions, there are people here to help.</p>
-    <div class="todo no-print"><b>To add:</b> People Team or People Partner contacts for the mentee&rsquo;s region.</div>
-    <div class="todo no-print"><b>To add:</b> link or QR code for the Mentoring and Coaching page on the Colleague Support Hub.</div>
-    <div class="todo no-print"><b>To add:</b> link to the mentoring community or Teams channel for mentees, if one is set up.</div>
-    <div class="todo no-print"><b>To add:</b> current L&amp;D contact details.</div>
     <div class="closing">
       <div class="thanks">Enjoy the journey. The growth is yours to keep.</div>
       <p style="text-align:center;color:var(--grey);font-size:13px;margin-top:6px">Story Contracting &nbsp;|&nbsp; Learning &amp; Development</p>
@@ -430,6 +391,7 @@ table.log td .cell:focus{outline:2px solid var(--orange-bright);outline-offset:-
   </div>
   <div class="wm">STORY</div>
 </section>
+
 
 </div><!-- /app -->
 
